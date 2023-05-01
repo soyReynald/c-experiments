@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Experiments;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace PracticassBasicas
             Console.WriteLine("Guessing word game (1) / Juego de adivinanzas de palabra (1)");
             Console.WriteLine("Bible matching verses game (2) / Juego para machear (comprobar igualdad en una o varias palabras) de dos versiculos (2)");
             Console.WriteLine("Gain by being honest (3)"); // In development
+            Console.WriteLine("Books collection, game (4)");
 
             Console.WriteLine("Por favor, selecciona: (1), (2), (3)");
             int expOptionSelected = Convert.ToInt16(Console.ReadLine());
@@ -30,7 +32,12 @@ namespace PracticassBasicas
                 case 3:
                     // honestyGame();
                     break;
+                case 4:
+                    myBooksCollection();
+                    break;
             }
+        
+            
         }
 
         public static void WordGuessGame()
@@ -135,6 +142,13 @@ namespace PracticassBasicas
             }
         }
 
+        private static void myBooksCollection()
+        {
+            Book book1 = new Book();
+
+            string book = book1.showPortrait("Cieguito", "Reynald Ramirez", "A story of a boy who falls in love with a little girl that is unique and special, and with the help of Jesus, he was able to get everything He wanted.");
+            Console.WriteLine(book);
+        }
 
         // Helper functions
         private static bool Contains(string container, string element)
